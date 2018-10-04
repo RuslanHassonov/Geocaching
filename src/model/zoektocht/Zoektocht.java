@@ -12,6 +12,8 @@ import model.schat.Schat;
 import model.omgeving.Omgeving;
 
 public class Zoektocht {
+
+
     private final Adres startAdres;
     private final Datum startDatum;
     private final Schat schat;
@@ -31,6 +33,10 @@ public class Zoektocht {
         else {
             this.recensieScore = recensieScore;
         }
+    }
+
+    public Adres getStartAdres() {
+        return startAdres;
     }
 
     public String toString() {

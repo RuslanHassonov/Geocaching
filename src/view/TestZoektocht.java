@@ -8,11 +8,14 @@ package view;
 
 import model.factory.ZoektochtFactory;
 import model.zoektocht.Zoektocht;
+import utility.Berekeningen;
 import utility.StorageZoektocht;
 
 import java.util.Scanner;
 
 public class TestZoektocht {
+
+    Scanner input;
 
     public static void main(String[] args){
         TestZoektocht zoektocht = new TestZoektocht();
@@ -21,7 +24,7 @@ public class TestZoektocht {
     }
 
     private void startMenu(){
-        Scanner input = new Scanner(System.in);
+        input = new Scanner(System.in);
 
         System.out.print("\nMaak een keuze: \n" +
                 "1) Maak een nieuwe lijst van zoektochten\n" +
@@ -33,10 +36,12 @@ public class TestZoektocht {
                     lineClearance();
                     setUp();
                     print();
+                    subMenu();
                     break;
                 case 2:
                     lineClearance();
                     System.out.print("Bestand wordt geladen");
+                    subMenu();
                     break;
                 default:
                     System.out.print("\nOngeldige ingave.\n");
@@ -47,6 +52,43 @@ public class TestZoektocht {
             startMenu();
         }
 
+    }
+
+    private void subMenu(){
+        input = new Scanner(System.in);
+
+        System.out.print("\n\nWat wil je doen? \n" +
+                "1) Geef aantal schattentochten per provincie.\n" +
+                "2) Meest populaire omgeving voor schattentocht.\n" +
+                "3) Aantal schattentochten vanaf gekozen jaar (tot vandaag)" +
+                "4) Vaakst gewonnen prijs." +
+                "5) Terugkeren naar hoofdmenu." +
+                "\n\nKeuze: ");
+        try {
+            switch (input.nextInt()){
+                case 1:
+                      Berekeningen.getAantalZoektochtenPerProvincie(StorageZoektocht.getLijstZoektochten());
+                    break;
+                case 2:
+                    lineClearance();
+                    System.out.print("Bestand wordt geladen");
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    lineClearance();
+                    startMenu();
+                    break;
+                default:
+                    System.out.print("\nOngeldige ingave.\n");
+                    subMenu();
+            }
+        } catch (Exception e) {
+            System.out.print("\nOngeldige ingave. Waarde moet numeriek zijn.\n");
+            subMenu();
+        }
     }
 
 
