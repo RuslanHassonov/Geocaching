@@ -6,7 +6,7 @@
  */
 package model.Adres;
 
-import utility.Locaties;
+import utility.Provincies;
 
 import java.util.Random;
 
@@ -20,10 +20,10 @@ public class Adres {
         getRandomGemeenteVanProvincie();
         setStraat();
         getRandomHuisnummer();
-        getLocatie();
+        getProvincie();
     }
 
-    public String getLocatie() {return locatie;}
+    public String getProvincie() {return locatie;}
 
     public void setLocatie(String locatie) {this.locatie = locatie;}
 
@@ -66,7 +66,7 @@ public class Adres {
     }
 
     private void getRandomGemeenteVanProvincie(){
-        switch (Locaties.getRandomProvincienaam()) {
+        switch (Provincies.getRandomProvincienaam()) {
             case WEST_VLAANDEREN:
                 setGemeente("BRUGGE");
                 setLocatie("West-Vlaanderen");

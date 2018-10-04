@@ -14,22 +14,29 @@ public class Zoektocht {
     private final Datum startDatum;
     private final String schat;
     private final String afstand;
+    private final String omgeving;
     private final int recensieScore;
 
-    public Zoektocht(Adres startAdres, Datum startDatum, String schat, String afstand, int recensieScore) {
+    public Zoektocht(Adres startAdres, Datum startDatum, String schat, String afstand, String omgeving, int recensieScore) {
         this.startAdres = startAdres;
         this.startDatum = startDatum;
         this.schat = schat;
         this.afstand = afstand;
-        this.recensieScore = recensieScore;
+        this.omgeving = omgeving;
+        if (recensieScore == 0) {
+            this.recensieScore = 1;
+        }
+        else {
+            this.recensieScore = recensieScore;
+        }
     }
 
     public String toString() {
-        return " - Locatie/Type: " + startAdres.getLocatie() + " \n" +
-               " - Adres: " + startAdres.toString() + " \n" +
-               " - Datum: " + startDatum.toString() + " \n" +
-               " - Prijs: " + schat + "\n" +
-               " - Afstand: " + afstand + "km" + "\n" +
-               " - Score: " + recensieScore+ "\n\n";
+        return " - Locatie - Type: " + startAdres.getProvincie() + " - " + omgeving + " \n" +
+               " - Start Adres   : " + startAdres.toString() + " \n" +
+               " - Start Datum   : " + startDatum.toString() + " \n" +
+               " - Prijs         : " + schat + "\n" +
+               " - Afstand       : " + afstand + "km" + "\n" +
+               " - Score         : " + recensieScore + "/10" +"\n\n";
     }
 }

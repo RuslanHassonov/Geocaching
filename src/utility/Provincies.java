@@ -2,14 +2,14 @@
  * @Autor: Hassonov Ruslan
  * @Date: 24/09/2018
  * @Project: Geocaching
- * @Purpose: Locaties (types van) voor zoektochten
+ * @Purpose: Provincies (types van) voor zoektochten
  */
 
 package utility;
 
 import java.util.Random;
 
-public enum Locaties {
+public enum Provincies {
     WEST_VLAANDEREN,
     OOST_VLAANDEREN,
     ANTWERPEN,
@@ -23,9 +23,9 @@ public enum Locaties {
 
     private String provincieNaam;
 
-    //Locaties(String provincieNaam){this.provincieNaam = provincieNaam;}
+    //Provincies(String provincieNaam){this.provincieNaam = provincieNaam;}
 
-    public static Locaties getRandomProvincienaam() {
+    public static Provincies getRandomProvincienaam() {
         Random random = new Random();
         return values()[random.nextInt(values().length)];
     }

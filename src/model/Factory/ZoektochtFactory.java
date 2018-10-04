@@ -10,6 +10,7 @@ import model.Adres.Adres;
 import model.Datum.Datum;
 import model.Schat.Schatten;
 import model.Zoektocht.Zoektocht;
+import utility.Omgevingen;
 import utility.StorageZoektocht;
 
 import java.text.DecimalFormat;
@@ -21,18 +22,23 @@ public class ZoektochtFactory{
 
     public Zoektocht maakNieuweZoektocht(){
 
-        Zoektocht nieuweZoektocht = new Zoektocht(new Adres(), new Datum(), Schatten.getRandomSchat().toString(), getRandomAfstand(), getRandomRecensie());
+        Zoektocht nieuweZoektocht = new Zoektocht(new Adres(),
+                                                  new Datum(),
+                                                  Schatten.getRandomSchat().toString(),
+                                                  getRandomAfstand(),
+                                                  Omgevingen.getRandomOmgeving().toString(),
+                                                  getRandomRecensie());
         alleZoektochten.setLijstZoektochten(nieuweZoektocht);
         return nieuweZoektocht;
     }
 
-    private static String getRandomAfstand (){
+    private String getRandomAfstand (){
         DecimalFormat df2 = new DecimalFormat(".##");
         Random random = new Random();
         return df2.format(random.nextDouble()*100.0);
     }
 
-    private static int getRandomRecensie(){
+    private int getRandomRecensie(){
         Random random = new Random();
         return random.nextInt(10);
     }
