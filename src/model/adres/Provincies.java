@@ -5,7 +5,7 @@
  * @Purpose: Provincies (types van) voor zoektochten
  */
 
-package utility;
+package model.adres;
 
 import java.util.Random;
 

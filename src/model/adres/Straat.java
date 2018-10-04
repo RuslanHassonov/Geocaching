@@ -4,7 +4,7 @@
  * @Project: Geocaching
  * @Purpose: Enumerator voor straatnamen
  */
-package model.Adres;
+package model.adres;
 
 import java.util.Random;
 

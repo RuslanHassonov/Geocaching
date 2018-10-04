@@ -2,22 +2,24 @@
  * @Autor: Hassonov Ruslan
  * @Date: 24/09/2018
  * @Project: Geocaching
- * @Purpose: Definitie class Zoektocht
+ * @Purpose: Definitie class zoektocht
  */
-package model.Zoektocht;
+package model.zoektocht;
 
-import model.Adres.Adres;
-import model.Datum.Datum;
+import model.adres.Adres;
+import model.datum.Datum;
+import model.schat.Schat;
+import model.omgeving.Omgeving;
 
 public class Zoektocht {
     private final Adres startAdres;
     private final Datum startDatum;
-    private final String schat;
+    private final Schat schat;
     private final String afstand;
-    private final String omgeving;
+    private final Omgeving omgeving;
     private final int recensieScore;
 
-    public Zoektocht(Adres startAdres, Datum startDatum, String schat, String afstand, String omgeving, int recensieScore) {
+    public Zoektocht(Adres startAdres, Datum startDatum, Schat schat, String afstand, Omgeving omgeving, int recensieScore) {
         this.startAdres = startAdres;
         this.startDatum = startDatum;
         this.schat = schat;
@@ -32,10 +34,10 @@ public class Zoektocht {
     }
 
     public String toString() {
-        return " - Locatie - Type: " + startAdres.getProvincie() + " - " + omgeving + " \n" +
-               " - Start Adres   : " + startAdres.toString() + " \n" +
-               " - Start Datum   : " + startDatum.toString() + " \n" +
-               " - Prijs         : " + schat + "\n" +
+        return " - Locatie - Type: " + startAdres.getProvincie() + " - " + omgeving.getOmgevingNaam() + " \n" +
+               " - Start adres   : " + startAdres.toString() + " \n" +
+               " - Start datum   : " + startDatum.toString() + " \n" +
+               " - Prijs         : " + schat.getSchatNaam() + "\n" +
                " - Afstand       : " + afstand + "km" + "\n" +
                " - Score         : " + recensieScore + "/10" +"\n\n";
     }

@@ -2,11 +2,9 @@
  * @Autor: Hassonov Ruslan
  * @Date: 24/09/2018
  * @Project: Geocaching
- * @Purpose: Definitie class Datum
+ * @Purpose: Definitie class datum
  */
-package model.Datum;
-
-import java.util.Random;
+package model.datum;
 
 public class Datum implements Comparable<Datum>
 {

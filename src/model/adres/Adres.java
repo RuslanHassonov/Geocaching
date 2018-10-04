@@ -2,11 +2,9 @@
  * @Autor: Hassonov Ruslan
  * @Date: 24/09/2018
  * @Project: Geocaching
- * @Purpose: Definitie class Adres
+ * @Purpose: Definitie class adres
  */
-package model.Adres;
-
-import utility.Provincies;
+package model.adres;
 
 import java.util.Random;
 

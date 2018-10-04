@@ -4,13 +4,14 @@
  * @Project: Geocaching
  * @Purpose: Opbouw van ZoektochtFactory pattern
  */
-package model.Factory;
+package model.factory;
 
-import model.Adres.Adres;
-import model.Datum.Datum;
-import model.Schat.Schatten;
-import model.Zoektocht.Zoektocht;
-import utility.Omgevingen;
+import model.adres.Adres;
+import model.datum.Datum;
+import model.schat.Schat;
+import model.schat.Schatten;
+import model.zoektocht.Zoektocht;
+import model.omgeving.*;
 import utility.StorageZoektocht;
 
 import java.text.DecimalFormat;
@@ -24,9 +25,9 @@ public class ZoektochtFactory{
 
         Zoektocht nieuweZoektocht = new Zoektocht(new Adres(),
                                                   new Datum(),
-                                                  Schatten.getRandomSchat().toString(),
+                                                  new Schat(Schatten.getRandomSchat().toString()),
                                                   getRandomAfstand(),
-                                                  Omgevingen.getRandomOmgeving().toString(),
+                                                  new Omgeving(Omgevingen.getRandomOmgeving().toString()),
                                                   getRandomRecensie());
         alleZoektochten.setLijstZoektochten(nieuweZoektocht);
         return nieuweZoektocht;

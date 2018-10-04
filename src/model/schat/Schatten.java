@@ -4,7 +4,7 @@
  * @Project: Geocaching
  * @Purpose: Vastlegging voor eventuele schatten
  */
-package model.Schat;
+package model.schat;
 
 import java.util.Random;
 

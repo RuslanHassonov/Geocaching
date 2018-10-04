@@ -6,7 +6,7 @@
  */
 package utility;
 
-import model.Zoektocht.Zoektocht;
+import model.zoektocht.Zoektocht;
 import java.util.ArrayList;
 
 public class StorageZoektocht {

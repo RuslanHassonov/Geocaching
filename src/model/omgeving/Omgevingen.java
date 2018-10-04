@@ -1,4 +1,4 @@
-package utility;
+package model.omgeving;
 
 import java.util.Random;
 
