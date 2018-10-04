@@ -108,7 +108,11 @@ public class Datum implements Comparable<Datum>
     private void setRandomDatum(){
         setJaar((int)(Math.random()*((2018-2000)+1))+2000);
         setMaand((int)(Math.random()*((12-1)+1))+1);
-        setDag((int)(Math.random()*((31-1)+1))+1);
+        if (maand == 2) {
+            setDag((int)(Math.random()*((28-1)+1))+1);
+        } else {
+            setDag((int)(Math.random()*((31-1)+1))+1);
+        }
     }
 
     @Override
