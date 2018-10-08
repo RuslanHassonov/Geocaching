@@ -11,7 +11,7 @@ import java.util.Random;
 public class Adres {
     private String gemeente;
     private String straat;
-    private String locatie;
+    private String provincie;
     private int nummer;
 
     public Adres() {
@@ -21,9 +21,9 @@ public class Adres {
         getProvincie();
     }
 
-    public String getProvincie() {return locatie;}
+    public String getProvincie() {return provincie;}
 
-    public void setLocatie(String locatie) {this.locatie = locatie;}
+    public void setProvincie(String provincie) {this.provincie = provincie;}
 
     public String getGemeente()
     {
@@ -67,43 +67,43 @@ public class Adres {
         switch (Provincies.getRandomProvincienaam()) {
             case WEST_VLAANDEREN:
                 setGemeente("BRUGGE");
-                setLocatie("West-Vlaanderen");
+                setProvincie("West-Vlaanderen");
                 break;
             case OOST_VLAANDEREN:
                 setGemeente("GENT");
-                setLocatie("Oost-Vlaanderen");
+                setProvincie("Oost-Vlaanderen");
                 break;
             case ANTWERPEN:
                 setGemeente("ANTWERPEN");
-                setLocatie("Provincie Antwerpen");
+                setProvincie("Provincie Antwerpen");
                 break;
             case LIMBURG:
                 setGemeente("HASSELT");
-                setLocatie("Limburg");
+                setProvincie("Limburg");
                 break;
             case VLAAMS_BRABANT:
                 setGemeente("LEUVEN");
-                setLocatie("Vlaams-Brabant");
+                setProvincie("Vlaams-Brabant");
                 break;
             case WAALS_BRABANT:
                 setGemeente("WAVER");
-                setLocatie("Waals-Brabant");
+                setProvincie("Waals-Brabant");
                 break;
             case HENEGOUWEN:
                 setGemeente("BERGEN");
-                setLocatie("Henegouwen");
+                setProvincie("Henegouwen");
                 break;
             case LUIK:
                 setGemeente("LUIK");
-                setLocatie("Provincie Luik");
+                setProvincie("Provincie Luik");
                 break;
             case LUXEMBURG:
                 setGemeente("AARLEN");
-                setLocatie("Provincie Luxemburg");
+                setProvincie("Provincie Luxemburg");
                 break;
             case NAMEN:
                 setGemeente("NAMEN");
-                setLocatie("Provincie Namen");
+                setProvincie("Provincie Namen");
                 break;
         }
     }

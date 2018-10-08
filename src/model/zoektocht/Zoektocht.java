@@ -38,6 +38,9 @@ public class Zoektocht {
     public Adres getStartAdres() {
         return startAdres;
     }
+    public Omgeving getOmgeving() { return omgeving; }
+    public Schat getSchat() { return schat; }
+    public String getAfstand() { return afstand; }
 
     public String toString() {
         return " - Locatie - Type: " + startAdres.getProvincie() + " - " + omgeving.getOmgevingNaam() + " \n" +
@@ -47,4 +50,6 @@ public class Zoektocht {
                " - Afstand       : " + afstand + "km" + "\n" +
                " - Score         : " + recensieScore + "/10" +"\n\n";
     }
+
+
 }

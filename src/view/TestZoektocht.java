@@ -44,11 +44,11 @@ public class TestZoektocht {
                     subMenu();
                     break;
                 default:
-                    System.out.print("\nOngeldige ingave.\n");
+                    System.out.print("\n--- !!! --- Ongeldige ingave --- !!! ---\n");
                     startMenu();
             }
         } catch (Exception e) {
-            System.out.print("\nOngeldige ingave. Waarde moet numeriek zijn.\n");
+            System.out.print("\n--- !!! --- Ongeldige ingave. Waarde moet numeriek zijn --- !!! ---\n");
             startMenu();
         }
 
@@ -60,33 +60,34 @@ public class TestZoektocht {
         System.out.print("\n\nWat wil je doen? \n" +
                 "1) Geef aantal schattentochten per provincie.\n" +
                 "2) Meest populaire omgeving voor schattentocht.\n" +
-                "3) Aantal schattentochten vanaf gekozen jaar (tot vandaag)" +
-                "4) Vaakst gewonnen prijs." +
+                "3) Totale afstand.\n" +
+                "4) Vaakst gewonnen prijs.\n" +
                 "5) Terugkeren naar hoofdmenu." +
                 "\n\nKeuze: ");
         try {
             switch (input.nextInt()){
                 case 1:
-                      Berekeningen.getAantalZoektochtenPerProvincie(StorageZoektocht.getLijstZoektochten());
+                    Berekeningen.getAantalZoektochtenPerProvincie(StorageZoektocht.getLijstZoektochten());
                     break;
                 case 2:
-                    lineClearance();
-                    System.out.print("Bestand wordt geladen");
+                    Berekeningen.getMeestPopulaireOmgeving(StorageZoektocht.getLijstZoektochten());
                     break;
                 case 3:
+                    Berekeningen.getTotaleAfstand(StorageZoektocht.getLijstZoektochten());
                     break;
                 case 4:
+                    Berekeningen.getVaakstGewonnenPrijs(StorageZoektocht.getLijstZoektochten());
                     break;
                 case 5:
                     lineClearance();
                     startMenu();
                     break;
                 default:
-                    System.out.print("\nOngeldige ingave.\n");
+                    System.out.print("\n--- !!! --- Ongeldige ingave --- !!! --- \n");
                     subMenu();
             }
         } catch (Exception e) {
-            System.out.print("\nOngeldige ingave. Waarde moet numeriek zijn.\n");
+            System.out.print("\n--- !!! --- Ongeldige ingave. Waarde moet numeriek zijn --- !!! --- \n");
             subMenu();
         }
     }
